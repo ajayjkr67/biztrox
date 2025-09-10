@@ -78,11 +78,27 @@
 
 			</div>
 
-			<div class="service_nav_img">
-				<img src="Images/Service/logo.png">
+			<div class="home_nav_img">
+				<img src="Images/Home_page/logo.png">
+				<button id="menu-btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
+			</div>
 
-				<button><i class="fa fa-bars" aria-hidden="true"></i></button>
-
+			<div class="home_nav_li" id="mobile-nav">
+				<a href="index.html">
+					<li>HOME</li>
+				</a>
+				<a href="ABOUT_US.html">
+					<li>ABOUT US</li>
+				</a>
+				<a href="SERVICE.html">
+					<li>SERVICE</li>
+				</a>
+				<a href="BLOG.html">
+					<li>BLOG</li>
+				</a>
+				<a href="CONTACT.html">
+					<li>CONTACT</li>
+				</a>
 			</div>
 
 
@@ -372,18 +388,23 @@
 
 	</div>
 
+	<script>
+		const btn = document.getElementById('menu-btn');
+		const nav = document.getElementById('mobile-nav');
 
+		// Toggle when clicking hamburger
+		btn.addEventListener('click', (e) => {
+			e.stopPropagation(); // prevent immediate close
+			nav.classList.toggle('open');
+		});
 
-
-
-
-
-
-
-
-
-
-
+		// Close menu when clicking outside
+		document.addEventListener('click', (e) => {
+			if (nav.classList.contains('open') && !nav.contains(e.target)) {
+				nav.classList.remove('open');
+			}
+		});
+	</script>
 
 
 
