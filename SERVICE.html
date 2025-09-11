@@ -5,6 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SERVICE</title>
+	<link rel="icon" type="image/png"
+		href="https://freepngdesign.com/content/uploads/images/p-1737-1-bitrix-logo-png-transparent-logo-773516842170.png">
 	<link rel="stylesheet" type="text/css" href="Project_1.css">
 	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="themify-icons/themify-icons.css">
@@ -53,55 +55,26 @@
 
 	<!-- ----------------SERVICE_NAVIGATION_BAR----------------- -->
 
-	<div class="service_nav">
+	<div class="home_nav list-style-none">
 		<ul>
-			<div class="service_nav_li">
-				<a href="index.html">
-					<li>HOME</li>
-				</a>
-
-				<a href="ABOUT_US.html">
-					<li>ABOUT US</li>
-				</a>
-
-				<a href="SERVICE.html">
-					<li>SERVICE</li>
-				</a>
-
-				<a href="BLOG.html">
-					<li>BLOG</li>
-				</a>
-
-				<a href="CONTACT.html">
-					<li>CONTACT</li>
-				</a>
-
-			</div>
-
-			<div class="home_nav_img">
-				<img src="Images/Home_page/logo.png">
+			<li class="home_nav_li"><a href="index.html" class="navlink">HOME</a></li>
+			<li class="home_nav_li"><a href="ABOUT_US.html" class="navlink">ABOUT US</a></li>
+			<li class="home_nav_li"><a href="SERVICE.html" class="navlink">SERVICE</a></li>
+			<li class="home_nav_li"><a href="BLOG.html" class="navlink">BLOG</a></li>
+			<li class="home_nav_li"><a href="CONTACT.html" class="navlink">CONTACT</a></li>
+			<li class="home_nav_img">
+				<img src="Images/Home_page/logo.png" alt="Logo">
 				<button id="menu-btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
-			</div>
-
-			<div class="home_nav_li" id="mobile-nav">
-				<a href="index.html">
-					<li>HOME</li>
-				</a>
-				<a href="ABOUT_US.html">
-					<li>ABOUT US</li>
-				</a>
-				<a href="SERVICE.html">
-					<li>SERVICE</li>
-				</a>
-				<a href="BLOG.html">
-					<li>BLOG</li>
-				</a>
-				<a href="CONTACT.html">
-					<li>CONTACT</li>
-				</a>
-			</div>
-
-
+			</li>
+		</ul>
+	</div>
+	<div id="mobile-nav" class="mobile-nav list-style-none">
+		<ul>
+			<li class="home_nav_li"><a href="index.html" class="navlink">HOME</a></li>
+			<li class="home_nav_li"><a href="ABOUT_US.html" class="navlink">ABOUT US</a></li>
+			<li class="home_nav_li"><a href="SERVICE.html" class="navlink">SERVICE</a></li>
+			<li class="home_nav_li"><a href="BLOG.html" class="navlink">BLOG</a></li>
+			<li class="home_nav_li"><a href="CONTACT.html" class="navlink">CONTACT</a></li>
 		</ul>
 	</div>
 
@@ -402,6 +375,15 @@
 		document.addEventListener('click', (e) => {
 			if (nav.classList.contains('open') && !nav.contains(e.target)) {
 				nav.classList.remove('open');
+			}
+		});
+	</script>
+
+	<script>
+		const links = document.querySelectorAll('.navlink');
+		links.forEach(link => {
+			if (link.href === window.location.href) {
+				link.classList.add('active');
 			}
 		});
 	</script>
